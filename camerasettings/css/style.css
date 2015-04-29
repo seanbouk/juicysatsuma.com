@@ -1,0 +1,326 @@
+*
+{
+	outline: none;
+}
+
+h3
+{
+	font-size: 18px;
+}
+
+.calculator
+{
+	border: 1px solid #bbb;
+	background-color: #ebebeb;
+	margin-top: 10px;
+	padding: 10px;	
+	overflow: hidden;
+	display: block;
+	box-shadow: 2px 2px 5px #ddd;
+	height: 458px;
+}
+
+.zoom
+{
+	width: 100%;
+	overflow: hidden;
+}
+
+.tabButton
+{
+	width: 224px;
+	margin-bottom: 30px;
+	height: 40px;
+	font-size: 18px;	
+}
+
+.zoomTab
+{
+	margin-right: 5px;
+}
+
+.modal
+{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	top: 0px;
+	left: 0px;
+	display: none;
+}
+
+.zoomSetting
+{
+	background-color: white;
+	padding: 10px;
+	margin-top: 150px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 400px;
+	height: 100px;
+}
+
+.zoomSetting > .settingValues
+{
+	float: left;
+	margin-left: 65px;
+	margin-top: 35px;
+}
+
+.input
+{
+	float: left;
+	width: 50%;
+}
+
+.output
+{
+	float: right;
+	width: 50%;
+	/*padding: 5% 0;
+*/}
+
+.output > div
+{
+	text-align: center;
+	padding-top: 20%;
+}
+
+.demo
+{
+	width: 458px;
+	height: 195px;
+	clear: both;
+	background-color: #bbb;
+	float: left;
+}
+
+.viewFinder
+{
+	height: 100%;
+	width: 200px;
+	margin: 0 auto;
+	background-color: black;
+	overflow: hidden;
+}
+
+.zoomButton
+{
+	width: 100%;
+	height: 40px;
+	margin-bottom: 10px;
+}
+
+#decimal
+{
+	font-size: 10px;
+	line-height: 0px;/*so make sure something else is on the same row!*/
+}
+
+.light
+{
+	width: 100%;
+}
+
+.lightSetting
+{
+	line-height: 40px;
+	height: 50px;
+	overflow: hidden;
+}
+
+.lightSetting > .settingValues
+{
+	float: right;
+}
+
+.lightHeading
+{
+	float: left;
+}
+
+.settingButton
+{
+	float: left;
+	margin-left: 6px;
+}
+
+.unlocked
+{
+	background-image: url("../images/unlocked.png");
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: 23px 30px;
+}
+
+.locked
+{
+	background-image: url("../images/locked.png");
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: 23px 30px;
+}
+
+
+.lightHeading
+{
+	width: 130px;
+	margin-top: 0px;
+	display: inline-block;
+}
+
+.settingButton
+{
+	width: 42px;
+	height: 42px;
+	border: 0px;
+	padding: 0px;
+}
+
+.settingButton > img
+{
+	width: 15px;
+	height: 20px;
+}
+
+.settingValues
+{
+	font-size: 0px;/*removes space between inline blocks*/
+	width: 270px;
+	height: 40px;
+	overflow: hidden;
+	white-space: nowrap;
+
+	-webkit-user-select: none; /* Chrome/Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
+
+	/* Rules below not implemented in browsers yet */
+	-o-user-select: none;
+	user-select: none;
+
+	-webkit-box-shadow: inset 5px 5px 41px -5px rgba(0,0,0,0.67);
+	-moz-box-shadow: inset 5px 5px 41px -5px rgba(0,0,0,0.67);
+	box-shadow: inset 5px 5px 41px -5px rgba(0,0,0,0.67);
+}
+
+.settingValue
+{
+	font-size: 16px;
+	width: 90px;
+	height: 40px;
+	display: inline-block;
+	text-align: center;
+}
+
+.zoom .settingValue
+{
+	padding-top: 12px;	
+}
+
+.zoom h2
+{
+	margin-bottom: 15px;
+}
+
+.lightingResults
+{
+	border: 1px solid gray;
+	height: 42px;
+	padding-top: 16px;
+	padding-left: 50px;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+
+.lightingResults > h3
+{
+	margin: 0px;
+}
+
+.settingResults
+{
+	font-size: 0px;/*removes space between inline blocks*/
+	width: 274px;
+	overflow: hidden;
+	float: right;
+	white-space: nowrap;
+	font-size: 18px;
+}
+
+.settingResult
+{
+	display: none;
+}
+
+.settingResult.selected
+{
+	display: inline-block;
+	font-size: 16px;
+	width: 90px;	
+	text-align: center;	
+}
+
+/*prevents subs and sups fucking line height*/
+sup, sub
+{
+    height: 0;
+    line-height: 1;
+    vertical-align: baseline;
+    _vertical-align: bottom;/* ie hack*/
+    position: relative;
+}
+sup { bottom: 1ex; }
+sub { top: .5ex; }
+
+.notSelectable
+{
+	color: red;
+}
+
+.prev
+{
+	cursor: pointer;
+	background-color: #777;
+	opacity: 0.5;
+}
+
+.selected
+{
+	font-weight: bold;
+	color: #000;
+}
+
+
+.next
+{
+	cursor: pointer;
+	background-color: #777;
+	opacity: 0.6;
+}
+.engagedInstruction 
+{
+	display: none;
+}
+
+.lockedInstruction
+{
+	display: none;
+}
+
+/* social stuff needs moving to shared css*/
+.socialContainer
+{
+	margin-top: 20px;
+	width: 480px;
+	overflow: hidden;
+	font-size: 12px;
+	color: #666;
+	font-family: Roboto,arial,sans-serif;
+}
+
+.socialContainer *
+{
+	float: left;
+}

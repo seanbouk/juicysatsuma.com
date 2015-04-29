@@ -1,0 +1,95 @@
+/*div
+{
+	border: 1px dashed black;
+}*/
+
+
+@font-face {
+    font-family: 'Gill Sans';
+    src: url(33535gillsansmt.ttf);
+}
+
+a:link
+{
+	text-decoration: none;
+	color: inherit;
+}
+
+a:visited
+{
+	text-decoration: none;
+	color: inherit;
+}
+
+a:hover
+{
+	text-decoration: underline;
+}
+
+body
+{
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+	color: #444444;
+	background-color: #f5f5f5;
+}
+
+hr
+{	
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+	border-bottom: 1px dashed #8f8f8f;
+}
+
+img
+{
+	float: left;
+	width: 200px;
+	height: 200px;
+	margin-right: 10px;
+}
+
+h2
+{
+	margin: 0px;
+}
+
+h3
+{
+	font-weight: normal;
+}
+
+.inline
+{
+	display: inline;
+}
+
+.container
+{
+	padding: 0px;
+	margin: 0 auto;
+	width: 480px;
+}
+
+.logo
+{
+	text-shadow: 2px 2px 5px #aaa;
+}
+
+.tools
+{
+	color: #666;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+.menuButton
+{
+	border: 1px solid #bbb;
+	background-color: #ebebeb;
+	margin-top: 10px;
+	padding: 10px;	
+	overflow: hidden;
+	display: block;
+	box-shadow: 2px 2px 5px #ddd;
+}

@@ -1,0 +1,353 @@
+@font-face {
+    font-family: 'Gill Sans';
+    src: url(33535gillsansmt.ttf);
+}
+
+body
+{
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+	color: #444444;
+}
+
+hr
+{	
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+	border-bottom: 1px dashed #8f8f8f;
+}
+
+.inline
+{
+	display: inline;
+}
+
+.container
+{
+	padding: 0px;
+	margin: 0 auto;
+	width: 480px;
+}
+
+.paintPicker
+{	
+	width: 	480px;
+	background-color: #ebebeb;
+	margin-top: 10px;
+	border: 1px solid #bbb;
+}
+
+.palette
+{
+	width: 	270px;
+	display: 	inline-block;	
+	float: left;
+	clear: none;
+}
+
+.swatch
+{
+	width: 42px;
+	height: 29px;
+	background-color: white;
+	border: 1px solid 8f8f8f;
+	margin: 7px -2px -2px 7px;
+	display: inline-block;
+}
+
+.selected
+{
+	border: 2px dashed black;
+	margin: 6px -3px -3px 6px;
+}
+
+.demo
+{
+	clear: both;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 25px;
+}
+
+.paintPot
+{
+	width: 120px;
+	height: 120px;
+	border: 1px dashed #8f8f8f;
+	border-radius: 100%;
+	display: inline-block;
+	margin: 0px 15px -20px 15px;
+	position: relative;
+}
+
+.blob
+{
+	width: 50%;
+	height: 50%;
+	border-radius: 100%;
+	margin: 25% auto;
+}
+
+.cylinderDemo
+{
+	width: 100%;
+	height: 30px;
+}
+
+.cylinder
+{
+	width: 20%;
+	height: 100%;
+	display: inline-block;
+	padding: 0px;
+	float: left;
+}
+
+.paintVolume
+{
+	position: absolute;
+	top: 50%;
+	left: 0%;
+	text-align: center;
+	width: 120px;
+	margin-top: -12px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 21px;
+	font-weight: bold;
+	color: #ebebeb;
+	text-shadow: 
+		-1px -1px 2px #000,  
+    	1px -1px 2px #000,
+    	-1px 1px 2px #000,
+     	1px 1px 2px #000;*
+}
+
+.cyan
+{
+	background-color: cyan;
+}
+
+.magenta
+{
+	background-color: magenta;
+}
+
+.yellow
+{
+	background-color: yellow;
+}
+
+.black
+{
+	background-color: black;
+}
+
+.white
+{
+	background-color: white;
+}
+
+#swatch0
+{
+	background-color: #7e1e9c;
+}
+
+#swatch1
+{
+	background-color: #15b01a;
+}
+
+#swatch2
+{
+	background-color: #0343df;
+}
+
+#swatch3
+{
+	background-color: #ff81c0;
+}
+
+#swatch4
+{
+	background-color: #653700;
+}
+
+#swatch5
+{
+	background-color: #e50000;
+}
+
+#swatch6
+{
+	background-color: #95d0fc;
+}
+
+#swatch7
+{
+	background-color: #029386;
+}
+
+#swatch8
+{
+	background-color: #f97306;
+}
+
+#swatch9
+{
+	background-color: #96f97b;
+}
+
+#swatch10
+{
+	background-color: #c20078;
+}
+
+#swatch11
+{
+	background-color: #ffff14;
+}
+
+#swatch12
+{
+	background-color: #75bbfd;
+}
+
+#swatch13
+{
+	background-color: #929591;
+}
+
+#swatch14
+{
+	background-color: #89fe05;
+}
+
+#swatch15
+{
+	background-color: #bf77f6;
+}
+
+#swatch16
+{
+	background-color: #9a0eea;
+}
+
+#swatch17
+{
+	background-color: #033500;
+}
+
+#swatch18
+{
+	background-color: #06c2ac;
+}
+
+#swatch19
+{
+	background-color: #c79fef;
+}
+
+#swatch20
+{
+	background-color: #00035b;
+}
+
+#swatch21
+{
+	background-color: #d1b26f;
+}
+
+#swatch22
+{
+	background-color: #ae7181;
+}
+
+#swatch23
+{
+	background-color: #13eac9;
+}
+
+#swatch24
+{
+	background-color: #06470c;
+}
+
+.socialContainer
+{
+	margin-top: 20px;
+	width: 480px;
+	overflow: hidden;
+	font-size: 12px;
+	color: #666;
+	font-family: Roboto,arial,sans-serif;
+}
+
+.socialContainer *
+{
+	float: left;
+}
+
+.socialCounter div
+{
+	width: 21px;
+	height: 24px;
+	margin-left: 5px;
+	line-height: 24px;
+	text-align: center;
+}
+
+.socialWidget
+{
+	margin-right: 10px;
+}
+
+.socialButton
+{
+	width: 38px;
+	height: 24px;
+	border-radius: 2px;
+}
+
+.socialCounter
+{
+	width: 26px;
+	height: 24px;
+	background-image: url("../../images/counter.gif");
+	margin: 0px;
+}
+
+.socialButton
+{
+	background-repeat: no-repeat;
+	background-position: 50%
+}
+
+.facebook .socialButton
+{
+	background-color: #3b5998;
+	background-image: url("../../images/facebook_24.png");
+}
+
+.twitter .socialButton
+{
+	background-color: #4099FF;
+	background-image: url("../../images/twitter_24.png");
+}
+
+.pinterest .socialButton
+{
+	background-color: #C92228;
+	background-image: url("../../images/pinterest_24.png");
+}
+
+.stumbleupon .socialButton
+{
+	background-color: #EB4823;
+	background-image: url("../../images/stumble_24.png");
+}
+
+.tumblr .socialButton
+{
+	background-color: #32506d;
+	background-image: url("../../images/tumblr_24.png");
+}

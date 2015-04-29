@@ -1,0 +1,178 @@
+<html>
+	<head>
+		<title>Paint Mixer</title>
+
+		<meta name="description" content="Tells you how to mix Cyan, Magenta, Yellow, White and Black paints to make any colour.">
+		<meta name="keywords" content="Paint, Colour Palette, Colour Mixer">
+		<meta name="author" content="Sean Thompson">
+
+		<meta property="og:title" content="Juicy Satsuma Paint Mixer" /> 
+		<meta property="og:description" content="Tells you how to mix Cyan, Magenta, Yellow, White and Black paints to make any colour." />  
+		<meta property="og:image" content="http://juicysatsuma.com/images/paint_mixer_thumb.png" /> 
+
+		<meta name="viewport" content="width=500">
+
+		<script type="text/javascript" src="../js/jquery-2.1.1.js"></script>
+
+		<script src="js/colpick.js" type="text/javascript"></script>
+		<link rel="stylesheet" href="css/colpick.css" type="text/css"/>
+		<script type="text/javascript" src="../js/fastclick.js"></script>
+
+		<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+
+		<script type="text/javascript" src="js/script.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+
+		<script type="text/javascript">var switchTo5x=true;</script>
+		<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+		<script type="text/javascript">stLight.options({publisher: "b7774165-2add-4ace-8265-2dae993c86e7", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-58081610-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type="application/javascript">
+	window.addEventListener('load', function () {
+		FastClick.attach(document.body);
+	}, false);
+</script> 
+	</head>
+	<body>
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&appId=212890258486&version=v2.0";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+
+		<div class="container">
+
+			<div class="header">
+				<h1 class="inline logo">
+					<span style="color:#FF3388">J</span><!--
+					--><span style="color:#FF5077">u</span><!--
+					--><span style="color:#FF6E66">i</span><!--
+					--><span style="color:#FF8C55">c</span><!--
+					--><span style="color:#FFAA44">y</span><!--
+					--><span> </span><!--
+					--><span style="color:#FFFF66">S</span><!--
+					--><span style="color:#DDFF71">a</span><!--
+					--><span style="color:#BBFF7C">t</span><!--
+					--><span style="color:#99FF88">s</span><!--
+					--><span style="color:#77FF93">u</span><!--
+					--><span style="color:#55FF9E">m</span><!--
+					--><span style="color:#33FFAA">a</span>
+				</h1>
+				<p class="inline">Paint mixing calculator</p>
+			</div>
+
+			<div class="paintPicker">	
+				<div id="picker"></div>
+
+				<div class="palette">
+					<div id="swatch0" class="swatch selected"></div>
+					<div id="swatch1" class="swatch"></div>
+					<div id="swatch2" class="swatch"></div>
+					<div id="swatch3" class="swatch"></div>
+					<div id="swatch4" class="swatch"></div>
+					<div id="swatch5" class="swatch"></div>
+					<div id="swatch6" class="swatch"></div>
+					<div id="swatch7" class="swatch"></div>
+					<div id="swatch8" class="swatch"></div>
+					<div id="swatch9" class="swatch"></div>
+					<div id="swatch10" class="swatch"></div>
+					<div id="swatch11" class="swatch"></div>
+					<div id="swatch12" class="swatch"></div>
+					<div id="swatch13" class="swatch"></div>
+					<div id="swatch14" class="swatch"></div>
+					<div id="swatch15" class="swatch"></div>
+					<div id="swatch16" class="swatch"></div>
+					<div id="swatch17" class="swatch"></div>
+					<div id="swatch18" class="swatch"></div>
+					<div id="swatch19" class="swatch"></div>
+					<div id="swatch20" class="swatch"></div>
+					<div id="swatch21" class="swatch"></div>
+					<div id="swatch22" class="swatch"></div>
+					<div id="swatch23" class="swatch"></div>
+					<div id="swatch24" class="swatch"></div>
+				</div>
+
+				<div class="demo">
+					<div class="paintPot"><div class="cyan blob"></div><p id="cyanVolume" class="paintVolume">100%</p></div>
+					<div class="paintPot"><div class="magenta blob"></div><p id="magentaVolume" class="paintVolume">100%</p></div>
+					<div class="paintPot"><div class="yellow blob"></div><p id="yellowVolume" class="paintVolume">100%</p></div>
+					<div class="paintPot"><div class="white blob"></div><p id="whiteVolume" class="paintVolume">100%</p></div>
+					<div class="paintPot"><div class="black blob"></div><p id="blackVolume" class="paintVolume">100%</p></div>
+				</div>
+
+				<hr/>
+
+				<div class="cylinderDemo">
+					<div class="cyan cylinder"></div>
+					<div class="magenta cylinder"></div>
+					<div class="yellow cylinder"></div>
+					<div class="white cylinder"></div>
+					<div class="black cylinder"></div>
+				</div>
+			</div>
+
+			<div class="socialContainer">
+
+				<!-- Place this tag in your head or just before your close body tag. -->
+				<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+				<!-- Place this tag where you want the +1 button to render. -->
+				<div class="g-plusone" data-href="http://www.juicysatsuma.com/paintmixer/"></div>
+
+				<div class="fb-like" data-href="http://www.juicysatsuma.com/paintmixer/" style="padding-right:33px" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
+
+				<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.juicysatsuma.com/paintmixer/" data-via="seanbo_uk">Tweet</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+			</div>
+
+			<div class="instructions">
+				<p><strong>Juicy Satsuma</strong> tells you how to mix your paints.</p>
+				<p>Red, Yellow and Blue are not the primary colours. <strong>Cyan</strong>, <strong>Magenta</strong>, and <strong>Yellow</strong> are the <em>real</em> primary colours. Go and have a look at a printer cartridge, if you don't beleive me!</p>
+				<p>Most printers also make use of <strong>Black</strong>, which helps with dark and desaturated colours. If you're mixing your own paint, you will also need <strong>White</strong>, unless you can pull off pointillism at 300dpi!</p>
+				<ol>
+					<li><strong>Picker (top left):</strong> Mix your colours here. Start with the rainbow, then move left. Skin tones are between orange and red.</li>
+					<li><strong>Palette (top right):</strong> Store you colours here. The selected one updated. This is saved, so you can finish your work later.</li>
+					<li><strong>Demo (above these instructions):</strong> Imagine each circle as a blob of paint from above, replicate with real paint, then mix. Follow the numbers, if you prefer to squeeze out a slug</li>
+				</ol>
+			</div>
+
+			<div class="products">
+				<iframe style="width:120px;height:240px;float:left" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=GB&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=null&marketplace=amazon&region=GB&placement=B003LPRULS&asins=B003LPRULS&linkId=QFQSVBOEAZMCRDMZ&show_border=true&link_opens_in_new_window=true"></iframe>
+				<iframe style="width:120px;height:240px;float:left" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=GB&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=null&marketplace=amazon&region=GB&placement=B00413MQ7C&asins=B00413MQ7C&linkId=VUVSN2JYAT5MVZ4M&show_border=true&link_opens_in_new_window=true"></iframe>
+				<iframe style="width:120px;height:240px;float:left" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=GB&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=null&marketplace=amazon&region=GB&placement=B008D1KVP2&asins=B008D1KVP2&linkId=BQLVVECSXRD22MRK&show_border=true&link_opens_in_new_window=true"></iframe>
+				<iframe style="width:120px;height:240px;float:left" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=GB&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=null&marketplace=amazon&region=GB&placement=B00NAY60NE&asins=B00NAY60NE&linkId=BANLULPEZOOFY6YJ&show_border=true&link_opens_in_new_window=true"></iframe>
+			</div>
+
+			<div class="discussion">
+				    <div id="disqus_thread"></div>
+				    <script type="text/javascript">
+				        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+				        var disqus_shortname = 'juicysatsuma'; // required: replace example with your forum shortname
+
+				        /* * * DON'T EDIT BELOW THIS LINE * * */
+				        (function() {
+				            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+				            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+				            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+				        })();
+				    </script>
+				    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+			</div>
+		</div>
+	</body>
+</html>
