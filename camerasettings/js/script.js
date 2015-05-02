@@ -211,11 +211,29 @@ function refreshZoomTab()
 	$(".viewFinder").width(195 * $(".aspectRatioValues > .selected").data("value") + "px");//magic number - $(".viewFinder").height() is sometimes wrong shortly after page load
 
 	//the moon is 0.528333 degrees across (on avergage)
+	//the orion image should be 100 times the size - about 50 degrees across, instead of 0.5
 	var moonSize = $(".viewFinder").width() / (fOVHoriz / 0.528333);
+	//
+	if(moonSize > 10)
+	{
+		$(".moon").css("display", "block");
+		$(".orion").css("display", "none");
+	}
+	else
+	{
+		$(".moon").css("display", "none");
+		$(".orion").css("display", "block");
+	}
+	//
 	$(".moon").width(moonSize + "px");
 	$(".moon").height(moonSize + "px");
 	$(".moon").css("margin-left", ($(".viewFinder").width() - $(".moon").width())/2 + "px" );
 	$(".moon").css("margin-top", (195 - $(".moon").height())/2 + "px" );//magic number - $(".viewFinder").height() is sometimes wrong shortly after page load
+	//
+	$(".orion").width(100 * moonSize + "px");
+	$(".orion").height(100 * moonSize + "px");
+	$(".orion").css("margin-left", ($(".viewFinder").width() - $(".orion").width())/2 + "px" );
+	$(".orion").css("margin-top", (195 - $(".orion").height())/2 + "px" );//magic number - $(".viewFinder").height() is sometimes wrong shortly after page load
 }
 
 function refreshLightTab()

@@ -94,6 +94,7 @@ h3
 	clear: both;
 	background-color: #bbb;
 	float: left;
+	overflow: hidden;
 }
 
 .viewFinder
