@@ -13,7 +13,7 @@
 
 		<meta name="viewport" content="width=500">
 
-		<script type="text/javascript" src="js/angular.js"></script>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
 
 		<link rel="stylesheet" type="text/css" href="../css/style.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
@@ -33,6 +33,7 @@
 		FastClick.attach(document.body);
 	}, false);
 </script> 
+
 	</head>
 	<body>
 	<div id="fb-root"></div>
@@ -66,23 +67,25 @@
 				<p class="inline">Camera Settings Calculator</p>
 			</div>
 
-			<div class="predictor">
-				stuff goes here.
+			<div class="predictor" ng-app>
+
+				<!--data ng-init="mean=0"/>
+				<data ng-init="max=0"/-->
+
+				<div class="editor">
+					Intended
+					<input type="number" ng-model="mean" placeholder="0" /><br/>
+					Wost Case
+					<input type="number" ng-model="max" placeholder="0" /><br/>
+					Plan for
+					<span ng-if="!mean || !max">fill the numbers out!</span>
+					<span ng-if="mean && max">{{ mean * 0.667 + max * 0.333 | number:2 }}</span>
+				</div>
+				<div class="log" ng-repeat=""></div>
 			</div>
 
 			<div class="socialContainer">
 
-				<!-- Place this tag in your head or just before your close body tag. -->
-				<script src="https://apis.google.com/js/platform.js" async defer></script>
-
-				<!-- Place this tag where you want the +1 button to render. -->
-				<div class="g-plusone" data-href="http://www.juicysatsuma.com/camerasettings/" ></div>
-
-				<div class="fb-like" data-href="http://www.juicysatsuma.com/camerasettings/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
-				<div style="width:20px; height:20px"></div>
-				<a href="https://twitter.com/share" class="twitter-share-button"  data-url="http://www.juicysatsuma.com/camerasettings/" data-via="seanbo_uk">Tweet</a>
-				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-				<div style="width:20px; height:20px"></div>
 
 			</div>
 
@@ -94,7 +97,7 @@
 				
 			</div>
 
-			<div class="discussion">
+			<!--div class="discussion">
 				    <div id="disqus_thread"></div>
 				    <script type="text/javascript">
 				        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -109,7 +112,7 @@
 				    </script>
 				    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     
-			</div>
+			</div-->
 		</div>
 	</body>
 </html>
