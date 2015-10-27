@@ -13,7 +13,8 @@
 
 		<meta name="viewport" content="width=500">
 
-		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="js/script.js"></script>
 
 		<link rel="stylesheet" type="text/css" href="../css/style.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
@@ -64,24 +65,33 @@
 						--><span style="color:#33FFAA">a</span>
 					</h1>
 				</a>
-				<p class="inline">Camera Settings Calculator</p>
+				<p class="inline">Scope Forecasting Calculator</p>
 			</div>
 
-			<div class="predictor" ng-app>
-
-				<!--data ng-init="mean=0"/>
-				<data ng-init="max=0"/-->
-
-				<div class="editor">
-					Intended
-					<input type="number" ng-model="mean" placeholder="0" /><br/>
-					Wost Case
-					<input type="number" ng-model="max" placeholder="0" /><br/>
-					Plan for
-					<span ng-if="!mean || !max">fill the numbers out!</span>
-					<span ng-if="mean && max">{{ mean * 0.667 + max * 0.333 | number:2 }}</span>
+			<div class="predictor">
+				<div>
+					<p><strong>Best Case</strong> estimate</p>
+					<textarea id="best">1</textarea>
 				</div>
-				<div class="log" ng-repeat=""></div>
+				<div>
+					<p><strong>Most Likely</strong> estimate</p>
+					<textarea id="likely">2</textarea>
+				</div>
+				<div>
+					<p><strong>Worst Case</strong> estimate</p>
+					<textarea id="worst">4</textarea>
+				</div>
+
+				<div>
+					<p><strong>Confidence</strong> required</p>
+					<input type="range" id="confidence" min="0" max="1" step="0.01" value="0.67" oninput="update()" />
+				</div>
+
+				<div>
+					<p><strong>Result</strong></p>
+					<textarea id="result"></textarea>
+				</div>
+						
 			</div>
 
 			<div class="socialContainer">
