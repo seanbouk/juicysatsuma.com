@@ -29,11 +29,6 @@
   ga('send', 'pageview');
 
 </script>
-<script type="application/javascript">
-	window.addEventListener('load', function () {
-		FastClick.attach(document.body);
-	}, false);
-</script> 
 
 	</head>
 	<body>
@@ -71,25 +66,31 @@
 			<div class="predictor">
 				<div>
 					<p><strong>Best Case</strong> estimate</p>
-					<textarea id="best">1</textarea>
+					<button class="decrement" data-target="best">-</button>
+					<textarea class="estimate" id="best">1</textarea>
+					<button class="increment" data-target="best">+</button>
 				</div>
 				<div>
 					<p><strong>Most Likely</strong> estimate</p>
-					<textarea id="likely">2</textarea>
+					<button class="decrement" data-target="likely">-</button>
+					<textarea class="estimate" id="likely">2</textarea>
+					<button class="increment" data-target="likely">+</button>
 				</div>
 				<div>
 					<p><strong>Worst Case</strong> estimate</p>
-					<textarea id="worst">4</textarea>
+					<button class="decrement" data-target="worst">-</button>
+					<textarea class="estimate" id="worst">4</textarea>
+					<button class="increment" data-target="worst">+</button>
 				</div>
 
 				<div>
-					<p><strong>Confidence</strong> required</p>
-					<input type="range" id="confidence" min="0" max="1" step="0.01" value="0.67" oninput="update()" />
+					<p><strong>Confidence</strong> <span class="confidence">##</span>%</p>
+					<input type="range" id="confidence" min="0" max="1" step="0.01" value="0.67" />
 				</div>
 
 				<div>
 					<p><strong>Result</strong></p>
-					<textarea id="result"></textarea>
+					<p><span class="result">##</span></p>
 				</div>
 						
 			</div>
@@ -101,10 +102,6 @@
 
 			<div class="instructions">
 				<p><strong>Juicy Satsuma</strong> helps you predict the future</p>
-			</div>
-
-			<div class="products">
-				
 			</div>
 
 			<!--div class="discussion">
