@@ -50,6 +50,8 @@ function update()
 	cleanNumericalField($("#likely"));
 	cleanNumericalField($("#worst"));
 
+	$(".confidence").html( (Number($("#confidence").val()) * 100).toFixed(0) );
+
 	calculateMeanAndsd();
 	findX();
 }
