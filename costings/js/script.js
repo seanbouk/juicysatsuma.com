@@ -33,13 +33,62 @@ $(document).ready(function()
 	{
 		update();
 	});
+
+	(function ( $ ) {
+	    var filters = $.expr[":"];
+	    if ( !filters.focus ) { 
+	        filters.focus = function( elem ) {
+	           return elem === document.activeElement && ( elem.type || elem.href );
+	        };
+	    }
+	})( jQuery );
 });
 
 function update()
 {
-	$('.confidence').html(Math.round($("#confidence").val() * 100));
+	cleanNumericalField($("#best"));
+	cleanNumericalField($("#likely"));
+	cleanNumericalField($("#worst"));
+
 	calculateMeanAndsd();
 	findX();
+}
+
+function cleanNumericalField(targetField)
+{
+	var caret = targetField.caret();
+
+	//digits dots and dashes only
+	targetField.val(targetField.val().replace(/([^0-9\-\.])/g, ""));
+
+	//no dashes after the first character
+	targetField.val(targetField.val().replace(/(?!^)-/g, ""));
+
+	//only one dot (no lookbehind in js)
+	var dotsArray = targetField.val().split(".");
+	if(dotsArray.length > 1)
+	{
+		dotsArray[0] += ".";
+		targetField.val(dotsArray.join(""));
+	}
+
+	//dot at the beginning gets a zero in front
+	targetField.val(targetField.val().replace(/^\./g, "0."));
+
+	//no zeroes before a number, only one before a dot
+	targetField.val(targetField.val().replace(/^0+(?=\d)/g, ""));//+ve
+	targetField.val(targetField.val().replace(/^-0+(?=\d)/g, "-"));//-ve
+
+	//leading -.
+	targetField.val(targetField.val().replace("-.", "-0."));
+
+	if(targetField.is(":focus")) targetField.caret(caret);
+
+}
+
+function hasFocus(elem) 
+{
+  return elem === document.activeElement && (elem.type || elem.href);
 }
 
 function calculateMeanAndsd()
