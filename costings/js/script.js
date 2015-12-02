@@ -7,6 +7,7 @@ var worst;
 
 $(document).ready(function()
 {
+	load();
 	update();
 
 	$('.decrement').click(function()
@@ -50,10 +51,31 @@ function update()
 	cleanNumericalField($("#likely"));
 	cleanNumericalField($("#worst"));
 
+	save();
+
 	$(".confidence").html( (Number($("#confidence").val()) * 100).toFixed(0) );
 
 	calculateMeanAndsd();
 	findX();
+}
+
+function save()
+{
+	$.cookie("costingsBest", Number($("#best").val()), { expires: 365*10 });
+	$.cookie("costingsLikely", Number($("#likely").val()), { expires: 365*10 });
+	$.cookie("costingsWorst", Number($("#worst").val()), { expires: 365*10 });
+
+	$.cookie("costingsConfidence", Number($("#confidence").val()), { expires: 365*10 });
+}
+
+function load()
+{
+	alert
+	if($.cookie("costingsBest")) $("#best").val($.cookie("costingsBest"));
+	if($.cookie("costingsLikely")) $("#likely").val($.cookie("costingsLikely"));
+	if($.cookie("costingsWorst")) $("#worst").val($.cookie("costingsWorst"));
+
+	if($.cookie("costingsConfidence")) $("#confidence").val($.cookie("costingsConfidence"));
 }
 
 function cleanNumericalField(targetField)
