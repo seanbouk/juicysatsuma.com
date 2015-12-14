@@ -309,19 +309,3 @@ sub { top: .5ex; }
 {
 	display: none;
 }
-
-/* social stuff needs moving to shared css*/
-.socialContainer
-{
-	margin-top: 20px;
-	width: 480px;
-	overflow: hidden;
-	font-size: 12px;
-	color: #666;
-	font-family: Roboto,arial,sans-serif;
-}
-
-.socialContainer *
-{
-	float: left;
-}

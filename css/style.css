@@ -98,3 +98,18 @@ h3
 	display: block;
 	box-shadow: 2px 2px 5px #ddd;
 }
+
+.socialContainer
+{
+	margin-top: 20px;
+	width: 480px;
+	overflow: hidden;
+	font-size: 12px;
+	color: #666;
+	font-family: Roboto,arial,sans-serif;
+}
+
+.socialContainer *
+{
+	float: left;
+}
