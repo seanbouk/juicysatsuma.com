@@ -3,6 +3,8 @@ var nT;
 var t;
 var halflife;
 var n1;
+var tN;
+var nTN;
 
 $(document).ready(function()
 {
@@ -53,7 +55,7 @@ function update()
 	//save();
 
 	calculateHalfLife();
-	//findX();
+	calculateNAtNewTime();
 }
 
 function save()
@@ -118,24 +120,13 @@ function calculateHalfLife()
 	t = Number($("#T").val());
 
 	halflife = (t * Math.log(2)) / Math.log(n0/nT);
-	$(".result").html(halflife.toPrecision(3));
+	$("#halfLife").html(halflife.toPrecision(3));
 }
 
-function findX()
+function calculateNAtNewTime()
 {
-	var target = Number($("#confidence").val());
+	tN = Number($("#TN").val());
 
-	var min = 0.0;
-	var max = 3 * worst;//2*worst reliiably gives you up to about 99% chance. 3*worst covers you.
-
-	var test;
-	var mid;
-	for(var i=0; i<20; i++)
-	{
-		mid = (min+max)/2;
-		test = foldedNormalCDF(mid, mean, sd);
-		test < target ? min = mid : max = mid;
-	}
-
-	$(".result").html(min.toPrecision(3));
+	nTN = n0 / Math.pow(2, tN/halflife);
+	$("#NTN").html(nTN.toPrecision(3));
 }
