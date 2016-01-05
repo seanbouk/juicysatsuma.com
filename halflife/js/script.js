@@ -10,7 +10,7 @@ var tNN;
 
 $(document).ready(function()
 {
-	//load();
+	load();
 	update();
 
 	$('.decrement').click(function()
@@ -56,7 +56,7 @@ function update()
 	cleanNumericalField($("#NN"));
 	cleanNumericalField($("#TN"));
 
-	//save();
+	save();
 
 	calculateHalfLife();
 	calculateNAtNewTime();
@@ -65,20 +65,20 @@ function update()
 
 function save()
 {
-	$.cookie("costingsBest", Number($("#best").val()), { expires: 365*10 });
-	$.cookie("costingsLikely", Number($("#likely").val()), { expires: 365*10 });
-	$.cookie("costingsWorst", Number($("#worst").val()), { expires: 365*10 });
-
-	$.cookie("costingsConfidence", Number($("#confidence").val()), { expires: 365*10 });
+	$.cookie("halfLifeN0", Number($("#N0").val()), { expires: 365*10 });
+	$.cookie("halfLifeNT", Number($("#NT").val()), { expires: 365*10 });
+	$.cookie("halfLifeT", Number($("#T").val()), { expires: 365*10 });
+	$.cookie("halfLifeNN", Number($("#NN").val()), { expires: 365*10 });
+	$.cookie("halfLifeTN", Number($("#TN").val()), { expires: 365*10 });
 }
 
 function load()
 {
-	if($.cookie("costingsBest")) $("#best").val($.cookie("costingsBest"));
-	if($.cookie("costingsLikely")) $("#likely").val($.cookie("costingsLikely"));
-	if($.cookie("costingsWorst")) $("#worst").val($.cookie("costingsWorst"));
-
-	if($.cookie("costingsConfidence")) $("#confidence").val($.cookie("costingsConfidence"));
+	if($.cookie("halfLifeN0")) $("#N0").val($.cookie("halfLifeN0"));
+	if($.cookie("halfLifeNT")) $("#NT").val($.cookie("halfLifeNT"));
+	if($.cookie("halfLifeT")) $("#T").val($.cookie("halfLifeT"));
+	if($.cookie("halfLifeNN")) $("#NN").val($.cookie("halfLifeNN"));
+	if($.cookie("halfLifeTN")) $("#TN").val($.cookie("halfLifeTN"));
 }
 
 function cleanNumericalField(targetField)
