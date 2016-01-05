@@ -5,6 +5,8 @@ var halflife;
 var n1;
 var tN;
 var nTN;
+var nN;
+var tNN;
 
 $(document).ready(function()
 {
@@ -51,11 +53,14 @@ function update()
 	cleanNumericalField($("#N0"));
 	cleanNumericalField($("#NT"));
 	cleanNumericalField($("#T"));
+	cleanNumericalField($("#NN"));
+	cleanNumericalField($("#TN"));
 
 	//save();
 
 	calculateHalfLife();
 	calculateNAtNewTime();
+	calculateTimeForNewValue();
 }
 
 function save()
@@ -129,4 +134,12 @@ function calculateNAtNewTime()
 
 	nTN = n0 / Math.pow(2, tN/halflife);
 	$("#NTN").html(nTN.toPrecision(3));
+}
+
+function calculateTimeForNewValue()
+{
+	nN = Number($("#NN").val());
+
+	tNN = halflife * Math.log(n0/nN)/Math.log(2);
+	$("#TNN").html(tNN.toPrecision(3));
 }

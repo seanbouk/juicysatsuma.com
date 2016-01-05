@@ -9,10 +9,20 @@ h3
 	margin: 0px;
 }
 
+hr
+{
+	padding-top: 20px;
+}
+
+.header
+{
+	padding-bottom: 20px;
+}
+
 .estimateGroup
 {
 	height: 60px;
-	margin-top: 40px;
+	margin-top: 20px;
 }
 
 .numericalControl
@@ -40,39 +50,6 @@ h3
 	float: left;
 	text-align: center;
 	font-size: 32px
-}
-
-.confidenceSlider
-{
-	margin: 0px;
-	float: left;
-	width: 260px;
-	height: 60px;
-}
-
-input[type=range]{
-    -webkit-appearance: none;
-}
-
-input[type=range]::-webkit-slider-thumb
-{
-    -webkit-appearance: none;
-    height: 60px;
-    width: 40px;
-    background: #DDD;
-    margin-top: -30px;
-}
-
-input[type=range]::-webkit-slider-runnable-track {
-    width: 260px;
-    height: 1px;
-    background: #DDD;
-    border: none;
-    border-radius: 3px;
-}
-
-input[type=range]:focus {
-    outline: none;
 }
 
 .result
