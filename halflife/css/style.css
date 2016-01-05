@@ -1,0 +1,87 @@
+*
+{
+	outline: 0px;/*1px solid red;*/
+}
+
+h3
+{
+	display: inline-block;
+	margin: 0px;
+}
+
+.estimateGroup
+{
+	height: 60px;
+	margin-top: 40px;
+}
+
+.numericalControl
+{
+	display: inline-block;
+	float: right;
+}
+
+.step
+{
+	border: 0px;
+	padding: 0px;
+	height: 60px;
+	width: 40px;
+	float: left;
+}
+
+.estimate
+{
+	width: 180px;
+	height: 48px;
+	border: 0px;
+	padding: 12px 0px 0px 0px;
+	margin: 0px;
+	float: left;
+	text-align: center;
+	font-size: 32px
+}
+
+.confidenceSlider
+{
+	margin: 0px;
+	float: left;
+	width: 260px;
+	height: 60px;
+}
+
+input[type=range]{
+    -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-thumb
+{
+    -webkit-appearance: none;
+    height: 60px;
+    width: 40px;
+    background: #DDD;
+    margin-top: -30px;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 260px;
+    height: 1px;
+    background: #DDD;
+    border: none;
+    border-radius: 3px;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+.result
+{
+	font-size: 32px;
+	width: 258px;
+	height: 46px;
+	display: inline-block;
+	text-align: center;
+	padding: 12px 0px 0px 0px;
+	border: 1px solid #DDD;
+}
