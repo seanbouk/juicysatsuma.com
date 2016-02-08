@@ -1,0 +1,64 @@
+*
+{
+	outline: 0px;/*1px solid red;*/
+}
+
+h3
+{
+	display: inline-block;
+	margin: 0px;
+}
+
+hr
+{
+	padding-top: 20px;
+}
+
+.header
+{
+	padding-bottom: 20px;
+}
+
+.estimateGroup
+{
+	height: 60px;
+	margin-top: 20px;
+}
+
+.numericalControl
+{
+	display: inline-block;
+	float: right;
+}
+
+.step
+{
+	border: 0px;
+	padding: 0px;
+	height: 60px;
+	width: 40px;
+	float: left;
+}
+
+.estimate
+{
+	width: 180px;
+	height: 48px;
+	border: 0px;
+	padding: 12px 0px 0px 0px;
+	margin: 0px;
+	float: left;
+	text-align: center;
+	font-size: 32px
+}
+
+.result
+{
+	font-size: 32px;
+	width: 258px;
+	height: 46px;
+	display: inline-block;
+	text-align: center;
+	padding: 12px 0px 0px 0px;
+	border: 1px solid #DDD;
+}
