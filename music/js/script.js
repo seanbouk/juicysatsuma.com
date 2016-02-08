@@ -1,22 +1,66 @@
-var context;
+var context
 var audioBuffer;
 var sourceNode;
+var analyser;
+var javascriptNode;
+
+var ctx;
+
+var gradient;
 
 $(document).ready(function()
 {
-	// create the audio context (chrome only for now)
-    context = new AudioContext();
- 
-    // load the sound
+	context = new AudioContext();
+
+	ctx = $("#canvas").get()[0].getContext("2d");
+
+	gradient = ctx.createLinearGradient(0,0,0,300);
+    gradient.addColorStop(1,'#000000');
+    gradient.addColorStop(0.75,'#ff0000');
+    gradient.addColorStop(0.25,'#ffff00');
+    gradient.addColorStop(0,'#ffffff');
+
     setupAudioNodes();
     loadSound("audio/smooth_criminal.mp3");
 });
 
 function setupAudioNodes() 
 {
+    // setup a javascript node
+    javascriptNode = context.createScriptProcessor(2048, 1, 1);
+    // connect to destination, else it isn't called
+    javascriptNode.connect(context.destination);
+
+    // when the javascript node is called
+	// we use information from the analyzer node
+	// to draw the volume
+	javascriptNode.onaudioprocess = function() 
+	{
+
+	    // get the average for the first channel
+	    var array =  new Uint8Array(analyser.frequencyBinCount);
+	    analyser.getByteFrequencyData(array);
+
+	    // clear the current state
+	    ctx.clearRect(0, 0, 480, 240);
+
+	    // set the fill style
+	    ctx.fillStyle=gradient;
+	    drawSpectrum(array);
+
+	}
+
+
+    // setup a analyzer
+    analyser = context.createAnalyser();
+    analyser.smoothingTimeConstant = 0.3;
+    analyser.fftSize = 512;
+
     // create a buffer source node
     sourceNode = context.createBufferSource();
-    // and connect to destination
+    sourceNode.connect(analyser);
+    analyser.connect(javascriptNode);
+
     sourceNode.connect(context.destination);
 }
 
@@ -41,7 +85,6 @@ function loadSound(url)
     request.send();
 }
 
-
 function playSound(buffer) 
 {
     sourceNode.buffer = buffer;
@@ -53,3 +96,13 @@ function onError(e)
 {
     console.log(e);
 }
+
+function drawSpectrum(array) 
+{
+    for ( var i = 0; i < (array.length); i++ ){
+        var value = array[i];
+
+        ctx.fillRect(i*2,250-value,1,250);
+        //  console.log([i,value])
+    }
+};
