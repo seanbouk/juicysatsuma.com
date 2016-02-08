@@ -45,11 +45,20 @@ $(document).ready(function()
 	})( jQuery );
 });
 
+function hasTouchKeyboard() 
+{
+  try{ document.createEvent("TouchEvent"); return true; }
+  catch(e){ return false; }
+}
+
 function update()
 {
-	cleanNumericalField($("#best"));
-	cleanNumericalField($("#likely"));
-	cleanNumericalField($("#worst"));
+	if(!hasTouchKeyboard())
+	{
+		cleanNumericalField($("#best"));
+		cleanNumericalField($("#likely"));
+		cleanNumericalField($("#worst"));
+	}
 
 	save();
 

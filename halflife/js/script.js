@@ -48,13 +48,22 @@ $(document).ready(function()
 	})( jQuery );
 });
 
+function hasTouchKeyboard() 
+{
+  try{ document.createEvent("TouchEvent"); return true; }
+  catch(e){ return false; }
+}
+
 function update()
 {
-	cleanNumericalField($("#N0"));
-	cleanNumericalField($("#NT"));
-	cleanNumericalField($("#T"));
-	cleanNumericalField($("#NN"));
-	cleanNumericalField($("#TN"));
+	if(!hasTouchKeyboard())
+	{
+		cleanNumericalField($("#N0"));
+		cleanNumericalField($("#NT"));
+		cleanNumericalField($("#T"));
+		cleanNumericalField($("#NN"));
+		cleanNumericalField($("#TN"));
+	}
 
 	save();
 
