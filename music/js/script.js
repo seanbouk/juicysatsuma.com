@@ -21,7 +21,9 @@ $(document).ready(function()
     gradient.addColorStop(0,'#ffffff');
 
     setupAudioNodes();
-    loadSound("audio/smooth_criminal.mp3");
+    loadSound("audio/20Hz to 20kHz.mp3");
+
+    $(".octave").load("octave.html");
 });
 
 function setupAudioNodes() 
@@ -54,7 +56,7 @@ function setupAudioNodes()
     // setup a analyzer
     analyser = context.createAnalyser();
     analyser.smoothingTimeConstant = 0.3;
-    analyser.fftSize = 512;
+    analyser.fftSize = 4096;//sample rate (ie, 44100) / this is the frequency gap between each value - 10.7666015625
 
     // create a buffer source node
     sourceNode = context.createBufferSource();
