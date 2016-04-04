@@ -24,8 +24,8 @@ $(document).ready(function()
     gradient.addColorStop(0,'#ffffff');
 
     setupAudioNodes();
-    //loadSound("audio/20Hz to 20kHz.mp3");
-    //loadSound("audio/20Hz to 20kHz.mp3");
+    //loadSound("audio/Nothing Else Matters - solo piano, Scott D. Davis.mp3");
+    //loadSound("audio/Game of Stylophone.mp3");
     //loadSound("audio/test-tone-middle-c.mp3");
     //loadSound("audio/middle-C HD.mp3");
     //loadSound("audio/20Hz to 20kHz.mp3");
@@ -120,7 +120,7 @@ function drawSpectrum(array)
     { 
         var value = getFrequencyValue($(this).parent().data("m") * $(this).parent().parent().data("c"));
         //$(this).height((value-(100-100/pinch))*pinch + "%");
-        $(this).height(Math.pow(value/100, pinch)*100 + "%");
+        $(this).width(Math.pow(value/100, pinch)*100 + "%");
     });
 };
 
