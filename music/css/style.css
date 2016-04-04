@@ -67,17 +67,12 @@ hr
 .keyboard
 {
 	width: 480px;
-	height: 1960px;
-}
-
-.ovtave
-{
+	height: 2336px;
 }
 
 .key
 {
 	border: 4px solid #263845;
-	/*position: relative;*/
 }
 
 .ebony
@@ -113,6 +108,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00d1d360', e
 	margin: -2px 0px -2px 0px;
 }
 
+.middleC > #c
+{
+	background-color: #A03C39;
+}
+
 .ivory > .spectra
 {
 	width: 50%;
@@ -123,10 +123,4 @@ background: -webkit-linear-gradient(right,  rgba(209,211,96,0.5) 0%,rgba(209,211
 background: linear-gradient(to left,  rgba(209,211,96,0.5) 0%,rgba(209,211,96,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00d1d360', endColorstr='#d1d360',GradientType=0 ); /* IE6-9 */
 
-}
-
-.spectra
-{
-	/*position: absolute;*/
-	bottom: 0;
 }
