@@ -3,10 +3,13 @@ var audioBuffer;
 var sourceNode;
 var analyser;
 var javascriptNode;
+var array;
 
 var ctx;
 
 var gradient;
+
+var pinch = 10;
 
 $(document).ready(function()
 {
@@ -21,7 +24,12 @@ $(document).ready(function()
     gradient.addColorStop(0,'#ffffff');
 
     setupAudioNodes();
-    loadSound("audio/20Hz to 20kHz.mp3");
+    //loadSound("audio/20Hz to 20kHz.mp3");
+    //loadSound("audio/20Hz to 20kHz.mp3");
+    //loadSound("audio/test-tone-middle-c.mp3");
+    //loadSound("audio/middle-C HD.mp3");
+    //loadSound("audio/20Hz to 20kHz.mp3");
+    loadSound("audio/Stairway to heaven.mp3");
 
     $(".octave").load("octave.html");
 });
@@ -40,7 +48,8 @@ function setupAudioNodes()
 	{
 
 	    // get the average for the first channel
-	    var array =  new Uint8Array(analyser.frequencyBinCount);
+	    array =  new Uint8Array(analyser.frequencyBinCount);
+        //console.log(analyser.frequencyBinCount);
 	    analyser.getByteFrequencyData(array);
 
 	    // clear the current state
@@ -101,10 +110,23 @@ function onError(e)
 
 function drawSpectrum(array) 
 {
-    for ( var i = 0; i < (array.length); i++ ){
+    /*for ( var i = 0; i < (array.length); i++ ){
         var value = array[i];
 
         ctx.fillRect(i*2,250-value,1,250);
-        //  console.log([i,value])
-    }
+    }*/
+
+    $('.spectra').each(function (index, value)
+    { 
+        var value = getFrequencyValue($(this).parent().data("m") * $(this).parent().parent().data("c"));
+        //$(this).height((value-(100-100/pinch))*pinch + "%");
+        $(this).height(Math.pow(value/100, pinch)*100 + "%");
+    });
 };
+
+function getFrequencyValue(frequency) 
+{
+  var nyquist = context.sampleRate/2;
+  var index = Math.round(frequency/nyquist * array.length);
+  return array[index] / 2.55;
+}
