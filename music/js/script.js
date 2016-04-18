@@ -13,6 +13,14 @@ var pinch = 10;
 
 $(document).ready(function()
 {
+    navigator.getUserMedia = 
+    (
+        navigator.getUserMedia ||
+        navigator.webkitGetUserMedia ||
+        navigator.mozGetUserMedia ||
+        navigator.msGetUserMedia
+    );
+
 	context = new AudioContext();
 
 	ctx = $("#canvas").get()[0].getContext("2d");
@@ -29,13 +37,92 @@ $(document).ready(function()
     //loadSound("audio/test-tone-middle-c.mp3");
     //loadSound("audio/middle-C HD.mp3");
     //loadSound("audio/20Hz to 20kHz.mp3");
-    loadSound("audio/Stairway to heaven.mp3");
+    //loadSound("audio/Stairway to heaven.mp3");
 
     $(".octave").load("octave.html");
 });
 
+
 function setupAudioNodes() 
 {
+
+    if (navigator.getUserMedia) 
+    {
+        navigator.getUserMedia
+        (
+            {video: false, audio: true},
+
+            // success callback
+            function(stream) 
+            {
+                /*/ initialize nodes
+                context = new (window.AudioContext || window.webkitAudioContext)();
+                source = context.createMediaStreamSource(stream);
+
+                // setup a analyzer
+                analyser = context.createAnalyser();
+                analyser.smoothingTimeConstant = 0.3;
+                analyser.fftSize = 4096;//sample rate (ie, 44100) / the frequency gap between each value - 10.7666015625
+
+                // create a buffer source node
+                sourceNode = context.createBufferSource();
+                sourceNode.connect(analyser);
+                analyser.connect(javascriptNode);
+
+                sourceNode.connect(context.destination);*/
+
+                context = new (window.AudioContext || window.webkitAudioContext)();
+                source = context.createMediaStreamSource(stream);
+                analyser = context.createAnalyser();
+
+                // set node properties and connect
+                analyser.smoothingTimeConstant = 0.3;
+                analyser.fftSize = 4096;
+                spectrum = new Uint8Array(analyser.frequencyBinCount);
+                source.connect(analyser);
+
+                // setup a javascript node
+                javascriptNode = context.createScriptProcessor(2048, 1, 1);
+                // connect to destination, else it isn't called
+                javascriptNode.connect(context.destination);
+
+                // when the javascript node is called
+                // we use information from the analyzer node
+                // to draw the volume
+                javascriptNode.onaudioprocess = function() 
+                {
+
+                // get the average for the first channel
+                array =  new Uint8Array(analyser.frequencyBinCount);
+                //console.log(analyser.frequencyBinCount);
+                analyser.getByteFrequencyData(array);
+
+                // clear the current state
+                ctx.clearRect(0, 0, 480, 240);
+
+                // set the fill style
+                ctx.fillStyle=gradient;
+                drawSpectrum(array);
+
+                }
+
+            },
+
+            // error callback
+            function(e) 
+            {
+                console.log(e);
+                alert("ERROR: see console");
+            }
+        );
+    } 
+    else
+    {
+        alert("!navigator.getUserMedia");
+    }
+
+
+    /*
     // setup a javascript node
     javascriptNode = context.createScriptProcessor(2048, 1, 1);
     // connect to destination, else it isn't called
@@ -59,20 +146,7 @@ function setupAudioNodes()
 	    ctx.fillStyle=gradient;
 	    drawSpectrum(array);
 
-	}
-
-
-    // setup a analyzer
-    analyser = context.createAnalyser();
-    analyser.smoothingTimeConstant = 0.3;
-    analyser.fftSize = 4096;//sample rate (ie, 44100) / this is the frequency gap between each value - 10.7666015625
-
-    // create a buffer source node
-    sourceNode = context.createBufferSource();
-    sourceNode.connect(analyser);
-    analyser.connect(javascriptNode);
-
-    sourceNode.connect(context.destination);
+	}*/
 }
 
 // load the specified sound
