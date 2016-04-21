@@ -62,7 +62,7 @@ function setupAudioNodes()
                 // setup a analyzer
                 analyser = context.createAnalyser();
                 analyser.smoothingTimeConstant = 0.3;
-                analyser.fftSize = 4096;//sample rate (ie, 44100) / the frequency gap between each value - 10.7666015625
+                analyser.fftSize = 4096;//sample rate (ie, 44100) / this = the frequency gap between each value - 10.7666015625
 
                 // create a buffer source node
                 sourceNode = context.createBufferSource();
@@ -72,12 +72,13 @@ function setupAudioNodes()
                 sourceNode.connect(context.destination);*/
 
                 context = new (window.AudioContext || window.webkitAudioContext)();
+                context.sampleRate = 192000;
                 source = context.createMediaStreamSource(stream);
                 analyser = context.createAnalyser();
 
                 // set node properties and connect
-                analyser.smoothingTimeConstant = 0.3;
-                analyser.fftSize = 4096;
+                analyser.smoothingTimeConstant = 0.5;
+                analyser.fftSize = 4096;//sample rate (ie, 44100) / this = the frequency gap between each value - 10.7666015625
                 spectrum = new Uint8Array(analyser.frequencyBinCount);
                 source.connect(analyser);
 
@@ -201,6 +202,7 @@ function drawSpectrum(array)
 function getFrequencyValue(frequency) 
 {
   var nyquist = context.sampleRate/2;
+  //console.log(context.sampleRate);
   var index = Math.round(frequency/nyquist * array.length);
   return array[index] / 2.55;
 }

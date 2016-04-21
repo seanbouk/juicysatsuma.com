@@ -11,12 +11,12 @@ h3
 .calculator
 {
 	border: 1px solid #bbb;
-	background-color: #ebebeb;
+	background-color: #ccc;
 	margin-top: 10px;
 	padding: 10px;	
 	overflow: hidden;
 	display: block;
-	box-shadow: 2px 2px 5px #ddd;
+	box-shadow: 2px 2px 5px #000;
 	height: 458px;
 }
 

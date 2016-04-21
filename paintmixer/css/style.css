@@ -6,7 +6,6 @@
 body
 {
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
-	color: #444444;
 }
 
 hr
@@ -35,6 +34,7 @@ hr
 	background-color: #ebebeb;
 	margin-top: 10px;
 	border: 1px solid #bbb;
+	box-shadow: 2px 2px 5px #000;
 }
 
 .palette
