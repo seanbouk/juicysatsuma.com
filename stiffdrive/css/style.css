@@ -1,0 +1,89 @@
+*
+{
+	outline: 0px;/*1px solid red;*/
+}
+
+h3
+{
+	display: inline-block;
+	margin: 0px;
+}
+
+hr
+{
+	padding-top: 20px;
+}
+
+.header
+{
+	padding-bottom: 20px;
+}
+
+
+
+.keyboard
+{
+	width: 480px;
+	height: 1020px;
+}
+
+.key
+{
+	border-top: 2px solid #222;
+	border-bottom: 2px solid #222;
+}
+
+.ebony
+{
+	width: 289px;
+	height: 12px;
+	background-color: #222;
+	position: static;
+	margin-top: -31px;
+	margin-bottom: 15px;
+	margin-left: 183px;
+}
+
+.ebony > .spectra
+{
+	width: 50%;
+	height: 100%;
+
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d1d360+0,a03c39+100&0+0,1+100 */
+background: -moz-linear-gradient(right,  rgba(160,60,57,0.5) 0%, rgba(160,60,57,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(right,  rgba(160,60,57,0.5) 0%,rgba(160,60,57,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to left,  rgba(160,60,57,0.5) 0%,rgba(160,60,57,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00d1d360', endColorstr='#a03c39',GradientType=0 ); /* IE6-9 */
+
+
+}
+
+.ivory
+{
+	width: 472px;
+	height: 20px;
+	background-color: #FFF;
+	margin: -2px 0px -2px 0px;
+}
+
+.bottom > #e, .bottom > #a, .lower > #d, .lower > #g, .lower > #b, .middle > #e 
+{
+	background-color: #eee;
+}
+
+.middle > #c
+{
+	background-color: #A03C39;
+}
+
+.ivory > .spectra
+{
+	width: 50%;
+	height: 100%;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d1d360+0,d1d360+100&0+0,1+100 */
+background: -moz-linear-gradient(right,  rgba(209,211,96,0.5) 0%, rgba(209,211,96,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(right,  rgba(209,211,96,0.5) 0%,rgba(209,211,96,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to left,  rgba(209,211,96,0.5) 0%,rgba(209,211,96,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00d1d360', endColorstr='#d1d360',GradientType=0 ); /* IE6-9 */
+
+}
