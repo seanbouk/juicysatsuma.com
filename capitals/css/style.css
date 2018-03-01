@@ -37,21 +37,50 @@ hr
   text-align:right;
   overflow:hidden;
   white-space: nowrap;
+  background-color: #333;
 }
 
 .history {
   float:right;
 }
 
-.questionArea
+.questionAreaOuter
 {
-	style="font-family: 'Castledown'; font-weight: bold; font-style: italic;";
-	font-size: 123px;
+	font-family: "Castledown";
+	font-weight: bold;
+	font-style: italic;
+	font-size: 110px;
 	color: #333;
-	margin: 0px;
+	height: 180px;
+
+	position: relative; 
+	left: 50%; 
+	float: left;
+}
+
+.questionAreaInner
+{
+	position: relative; 
+	left: -50%; 
+	float: left;
 }
 
 .questionMain
 {
 	color: White;
+}
+
+button
+{
+	width: 230px;
+	height: 200px;
+	font-family: "Castledown";
+	font-weight: bold;
+	font-style: italic;
+	font-size: 24px;
+}
+
+.upperCaseButton
+{
+	float: right;
 }
