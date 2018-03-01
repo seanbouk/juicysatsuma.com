@@ -14,6 +14,11 @@ function updateQuestion()
     $(".questionLeft").html(randomCharacter() + randomCharacter());
     $(".questionMain").html(randomCharacter());
     $(".questionRight").html(randomCharacter() + randomCharacter());
+
+    $(".lowerCaseButton").removeClass("right");
+    $(".lowerCaseButton").removeClass("wrong");
+    $(".upperCaseButton").removeClass("right");
+    $(".upperCaseButton").removeClass("wrong");
 }
 
 function randomCharacter()
@@ -42,6 +47,10 @@ function test(a)
     else
     {
         updateHistory("red");
+
+        //i'm sorry. this is awful
+        $(".lowerCaseButton").addClass(a == 65 ? "right" : "wrong");
+        $(".upperCaseButton").addClass(a == 65 ? "wrong" : "right");
     }
 }
 

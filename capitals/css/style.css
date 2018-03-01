@@ -78,6 +78,18 @@ button
 	font-weight: bold;
 	font-style: italic;
 	font-size: 24px;
+
+	background-color: #ccc;
+}
+
+.wrong
+{
+	background-color: #FF3388;
+}
+
+.right
+{
+	background-color: #33FFAA;
 }
 
 .upperCaseButton
