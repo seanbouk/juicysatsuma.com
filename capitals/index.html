@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Stiff Drive - Send Large Files</title>
+		<title>Tuned Spectrum Analyser</title>
 
 		<meta name="description" content="">
 		<meta name="keywords" content="">
@@ -14,7 +14,6 @@
 		<meta name="viewport" content="width=500">
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-		<script src="https://cdn.rawgit.com/carhartl/jquery-cookie/master/src/jquery.cookie.js"></script><!--master!!!!  built for 1.4.1-->
 		<script src="js/script.js"></script>
 
 		<link rel="stylesheet" type="text/css" href="../css/style.css">
@@ -31,9 +30,6 @@
 
 </script>
 
-    <script src="https://apis.google.com/js/client.js?onload=checkAuth">
-    </script>
-
 	</head>
 	<body>
 	<div id="fb-root"></div>
@@ -48,7 +44,7 @@
 
 			<div class="header">
 				<a class="logo" href="../index.html">
-					<h1 class="inline logo notranslate">
+					<h1 class="inline logo">
 						<span style="color:#FF3388">J</span><!--
 						--><span style="color:#FF5077">u</span><!--
 						--><span style="color:#FF6E66">i</span><!--
@@ -64,37 +60,21 @@
 						--><span style="color:#33FFAA">a</span>	
 					</h1>
 				</a>
-				<p class="inline"><p class="inline notranslate">Stiff Drive</p> - Send Large Files</p>
+				<p class="inline">Capitals</p>
 			</div>
 
-			<div class="languageTools">
-				<div id="google_translate_element"></div>
-				<script type="text/javascript">
-					function googleTranslateElementInit() 
-					{
-					  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, gaTrack: true, gaId: 'UA-58081610-1'}, 'google_translate_element');
-					}
-				</script>
-				<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+			<div>
+				<div class="outer-history">
+				<div class="history"></div>
 			</div>
-			
 
-			<div class="postcard">
-				<h2>Connect With Google</h2>
-				<div id="authorize-div" style="display: none">
-			      <span>Authorize access to Drive API</span>
-			      <!--Button for the user to click to initiate auth sequence -->
-			      <button id="authorize-button" onclick="handleAuthClick(event)">
-			        Authorize
-			      </button>
-			    </div>
-			    <pre id="output"></pre>
-				<h2>Select a file</h2>
-				<!--https://developers.google.com/drive/v3/web/manage-uploads-->
-					<form action="">
-					  File: <input type="file" name="myfile">
-					</form>
-				<h2>Send it</h2>
+				<div class="gameArea">
+					<p class="questionArea">
+						<span class="questionLeft"></span><span class="questionMain"></span><span class="questionRight"></span>
+					</p>
+					<button class="lowerCaseButton">lower case</button>
+					<button class="upperCaseButton">UPPER CASE</button>
+				</div>
 			</div>
 
 
@@ -104,14 +84,37 @@
 				<script src="https://apis.google.com/js/platform.js" async defer></script>
 
 				<!-- Place this tag where you want the +1 button to render. -->
-				<div class="g-plusone" data-href="https://www.juicysatsuma.com/stiffdrive/" ></div>
+				<div class="g-plusone" data-href="https://www.juicysatsuma.com/music/" ></div>
 
-				<div class="fb-like" data-href="https://www.juicysatsuma.com/stiffdrive/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
+				<div class="fb-like" data-href="https://www.juicysatsuma.com/music/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
 				<div style="width:20px; height:20px"></div>
-				<a href="https://twitter.com/share" class="twitter-share-button"  data-url="https://www.juicysatsuma.com/stiffdrive/" data-via="seanbo_uk">Tweet</a>
+				<a href="https://twitter.com/share" class="twitter-share-button"  data-url="https://www.juicysatsuma.com/music/" data-via="seanbo_uk">Tweet</a>
 				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 				<div style="width:20px; height:20px"></div>
 
+			</div>
+
+			<div class="instructions">
+				<p><strong>Juicy Satsuma</strong> Practice your capital letters</p>
+				<p>Which case is the white letter?<br/>
+				Click or use left and right cursors. Accuracy and speed gets you a win</p>
+			</div>
+
+			<div class="discussion">
+				    <div id="disqus_thread"></div>
+				    <script type="text/javascript">
+				        var disqus_shortname = 'juicysatsuma';
+				        var disqus_identifier = document.title;
+
+				        /* * * DON'T EDIT BELOW THIS LINE * * */
+				        (function() {
+				            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+				            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+				            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+				        })();
+				    </script>
+				    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
 			</div>
 		</div>
 	</body>

@@ -1,0 +1,57 @@
+*
+{
+	outline: 0px;/*1px solid red;*/
+}
+
+h3
+{
+	display: inline-block;
+	margin: 0px;
+}
+
+hr
+{
+	padding-top: 20px;
+}
+
+.header
+{
+	padding-bottom: 20px;
+}
+
+
+@font-face {
+    font-family: 'Castledown';
+    src: url('Castledown-BoldFun.woff2') format('woff2'),
+        url('Castledown-BoldFun.woff') format('woff'),
+        url('Castledown-BoldFun.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+.outer-history {
+  width:100%;
+  height: 32px;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:right;
+  overflow:hidden;
+  white-space: nowrap;
+}
+
+.history {
+  float:right;
+}
+
+.questionArea
+{
+	style="font-family: 'Castledown'; font-weight: bold; font-style: italic;";
+	font-size: 123px;
+	color: #333;
+	margin: 0px;
+}
+
+.questionMain
+{
+	color: White;
+}
