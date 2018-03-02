@@ -70,10 +70,16 @@ hr
 	color: White;
 }
 
+.buttons
+{
+	width: 480px;
+	overflow: auto;
+}
+
 button
 {
 	width: 230px;
-	height: 200px;
+	height: 440px;
 	font-family: "Castledown";
 	font-weight: bold;
 	font-style: italic;
@@ -84,12 +90,17 @@ button
 
 .wrong
 {
-	background-color: #FF3388;
+	background-color: #111;
 }
 
 .right
 {
-	background-color: #33FFAA;
+	background-color: #ccc;
+}
+
+.lowerCaseButton
+{
+	float: left;
 }
 
 .upperCaseButton

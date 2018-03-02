@@ -1,9 +1,31 @@
-
+var prevTime;
 
 $(document).ready(function()
 {
+    var date = new Date();
+    prevTime = date.getTime();
+
     $(".lowerCaseButton").click(testLower);
     $(".upperCaseButton").click(testUpper);
+
+    $(document).keydown
+    (
+        function(e) 
+        {
+            switch(e.which) 
+            {
+                case 37: //left
+                testLower();
+                break;
+
+                case 39: //right
+                testUpper();
+                break;
+            }
+
+            e.preventDefault();
+        }
+    );
 
 
     updateQuestion();
@@ -28,20 +50,24 @@ function randomCharacter()
 
 function testLower()
 {
-    test(97);
+    if(!$(".lowerCaseButton").hasClass("wrong")) test(97);
 }
 
 function testUpper()
 {
-    test(65);
+    if(!$(".upperCaseButton").hasClass("wrong")) test(65);
 }
 
 function test(a)
 {
+    var date = new Date();
+    var d = date.getTime() - prevTime;
+    prevTime = date.getTime();
+
     var charCode = $(".questionMain").html().charCodeAt(0);
     if (charCode >= a && charCode < a+26)
     {
-        updateHistory("green");
+        if (!$("button").hasClass("wrong")) d < 5000 ? updateHistory("green") :  updateHistory("amber");
         updateQuestion();
     }
     else
