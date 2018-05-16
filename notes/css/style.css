@@ -36,16 +36,6 @@ hr
 	padding-bottom: 20px;
 }
 
-
-@font-face {
-    font-family: 'Castledown';
-    src: url('Castledown-BoldFun.woff2') format('woff2'),
-        url('Castledown-BoldFun.woff') format('woff'),
-        url('Castledown-BoldFun.ttf') format('truetype');
-    font-weight: bold;
-    font-style: italic;
-}
-
 .outer-history {
   width:100%;
   height: 32px;
@@ -63,11 +53,6 @@ hr
 
 .questionAreaOuter
 {
-	font-family: "Castledown";
-	font-weight: bold;
-	font-style: italic;
-	font-size: 110px;
-	color: #333;
 	height: 180px;
 
 	position: relative; 
@@ -82,10 +67,18 @@ hr
 	float: left;
 }
 
-.questionMain
+ol
 {
-	color: White;
+	list-style: none;
 }
+
+.question
+{
+	width: 144px;
+}
+
+
+
 
 .buttons
 {
@@ -95,9 +88,8 @@ hr
 
 button
 {
-	width: 230px;
-	height: 230px;
-	font-family: "Castledown";
+	width: 110px;
+	height: 120px;
 	font-weight: bold;
 	font-style: italic;
 	font-size: 24px;
