@@ -1,4 +1,5 @@
 var prevTime;
+var selectedNote;
 
 $(document).ready(function()
 {
@@ -17,16 +18,7 @@ $(document).ready(function()
     (
         function(e) 
         {
-            switch(e.which) 
-            {
-                case 65: //left
-                testLower();
-                break;
-
-                case 66: //right
-                testUpper();
-                break;
-            }
+            if (e.which >= 65 && e.which <= 71) test(e.which);
 
             e.preventDefault();
         }
@@ -38,9 +30,9 @@ $(document).ready(function()
 
 function updateQuestion()
 {
-    $(".questionLeft").html(randomCharacter() + randomCharacter());
-    $(".questionMain").html(randomCharacter());
-    $(".questionRight").html(randomCharacter() + randomCharacter());
+    selectedNote = randomCharacter();
+    $(".questionAreaInner ol").children().hide();
+    $(".questionAreaInner ol").children().eq(selectedNote).show();
 
     $(".AButton").removeClass("right");
     $(".AButton").removeClass("wrong");
@@ -60,17 +52,7 @@ function updateQuestion()
 
 function randomCharacter()
 {
-    return Math.random() < 0.5 ? String.fromCharCode(Math.floor(Math.random()*26+65)) : String.fromCharCode(Math.floor(Math.random()*26+97))
-}
-
-function testLower()
-{
-    if(!$(".lowerCaseButton").hasClass("wrong")) test(97);
-}
-
-function testUpper()
-{
-    if(!$(".upperCaseButton").hasClass("wrong")) test(65);
+    return Math.floor(Math.random()*9);
 }
 
 function testA()
@@ -114,8 +96,7 @@ function test(a)
     var d = date.getTime() - prevTime;
     prevTime = date.getTime();
 
-    var charCode = $(".questionMain").html().charCodeAt(0);
-    if (charCode >= a && charCode < a+26)
+    if ((selectedNote + a) % 7 == 0)
     {
         if (!$("button").hasClass("wrong")) d < 5000 ? updateHistory("green") :  updateHistory("amber");
         updateQuestion();
@@ -125,8 +106,6 @@ function test(a)
         updateHistory("red");
 
         //i'm sorry. this is awful
-        $("button").addClass("right");
-
         switch(a)
         {
             case 65:
